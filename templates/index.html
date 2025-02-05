@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거스름돈 계산기</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 18px;
+            outline: none;
+            text-align: center;
+        }
+
+        input:focus {
+            border-color: #3498db;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .result ul {
+            list-style-type: none;
+        }
+
+        .result li {
+            padding: 5px 0;
+            font-size: 18px;
+            color: #34495e;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💰 거스름돈 계산기</h1>
+        <form action="/" method="post" >
+            <input type="number" name="amount" placeholder="지불금액을 입력하세요" required>
+            <input type="number" name="price" placeholder="상품가격을 입력하세요" required>
+           
+            <button type="submit">계산하기</button>
+        </form>
+        {% if amount  %}
+
+        <h2>
+            받은 금액: {{amount}}원
+            상품 가격: {{price}}원
+            거스름돈: {{change}}원
+            500원: {{coin500}}개
+            100원: {{coin100}}개
+            50원: {{coin50}}개 
+            10원: {{coin10}}개</h2>
+        {% endif %}
+
+
+        
+
+        
+</body>
+</html>
