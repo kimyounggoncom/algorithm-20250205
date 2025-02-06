@@ -108,28 +108,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>💰 거스름돈 계산기</h1>
-        <form action="/" method="post" >
+        <h2>💰 거스름돈 계산기</h2>
+
+
+        <form action="/" method="POST" >
             <input type="number" name="amount" placeholder="지불금액을 입력하세요" required>
             <input type="number" name="price" placeholder="상품가격을 입력하세요" required>
-           
             <button type="submit">계산하기</button>
         </form>
-        {% if amount  %}
+            {{ render_html | default('') | safe}}
+        
 
-        <h2>
-            받은 금액: {{amount}}원
-            상품 가격: {{price}}원
-            거스름돈: {{change}}원
-            50000원: {{won50000}}개
-            10000원: {{won10000}}개
-            5000원: {{won5000}}개
-            1000원: {{won1000}}개
-            500원: {{won500}}개
-            100원: {{won100}}개
-            50원: {{won50}}개 
-            10원: {{won10}}개</h2>
-        {% endif %}
+
+        
 
 
         
