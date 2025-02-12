@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원화</title>
+    <title>원화 환전</title>
     <style>
         * {
             box-sizing: border-box;
@@ -111,9 +111,9 @@
         <h2>💰 원화 </h2>
 
 
-        <form action="/exchange_won" method="post" >
-            <input type="number" name="amount" placeholder="지불금액을 입력하세요" required>
-            <input type="number" name="price" placeholder="상품가격을 입력하세요" required>
+        <form action="/exchange" method="POST" >
+            <input type="text" name="currency"  min='0' value='WON' required>
+            <input type="number" name="amount"  min='0' required>
             <button type="submit">계산하기</button>
         </form>
             {{ render_html | default('') | safe}}
