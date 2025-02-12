@@ -16,11 +16,15 @@ def exchange_dollar():
 def exchange_won():
     return render_template("exchange_won.html")
 
+@app.route('/yen')
+def exchange_yen():
+    return render_template("exchange_yen.html")
+
 @app.route('/exchange', methods = ["POST", "GET"])
 def exchange():
     if request.method == "POST":
         print("❤️POST 방식으로 전송된 데이터" )
-        currency = request.form.get('currency') # USD, WON상수
+        currency = request.form.get('currency') # USD, WON, JPY 상수
         amount=int(request.form.get("amount"))
         print("받은금액 : ", amount)
 

@@ -15,10 +15,16 @@ class ExchangeService:
             currency_list = self.get_dollar_list()
             currency_unit = "달러"
             page = "exchange_dollar.html"
+
         elif exchange.currency =='WON':
             currency_list = self.get_won_list()
             currency_unit = '원'
             page = "exchange_won.html"
+
+        elif exchange.currency =='JPY':
+            currency_list = self.get_yen_list()
+            currency_unit = "엔"
+            page = "exchange_yen.html"
         else:
             print("잘못된 화폐단위입니다.")
         
@@ -70,6 +76,21 @@ class ExchangeService:
                        DOLLAR_10, DOLLAR_5, DOLLAR_2, DOLLAR_1]
                     
         return dollar_list
+    
+    def get_yen_list(self):
+        YEN_10000 = 10000
+        YEN_5000 = 5000
+        YEN_1000 = 1000
+        YEN_500 = 500
+        YEN_100 = 100
+        YEN_50 = 50
+        YEN_10 = 10
+        YEN_5 = 5
+        YEN_1 = 1
+        
+        yen_list = [YEN_10000, YEN_5000, YEN_1000, YEN_500,
+                     YEN_100, YEN_50, YEN_10, YEN_5, YEN_1]
+        return yen_list
 
     def format_currency_counts(self, currency_dict, currency_unit):
         temp = ""
@@ -77,5 +98,7 @@ class ExchangeService:
             print("💰",currency)
             temp += f"{currency}{currency_unit}: {count}개<br/>"
         return temp
-       
+        
+        
 
+    

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>거스름돈 계산기</title>
+    <title>엔화</title>
     <style>
         * {
             box-sizing: border-box;
@@ -107,13 +107,22 @@
     </style>
 </head>
 <body>
-    <h2>환전하려는 화폐종류를 선택하세요</h2>
-    <a href="/dollar"><h2>💲달러화</h2></a>
-    <a href="/won"><h2>💰원화</h2></a>
-    <a href="/yen"><h2>💴엔화</h2></a>
     <div class="container">
+        <h2>💰 엔화 </h2>
+
+
+        <form action="/exchange" method="post" >
+            <input type="text"  name="currency"  min='0' value='JPY' required>
+            <input type="number" name="amount"  min='0' required>
+            <button type="submit">계산하기</button>
+        </form>
+            {{ render_html | default('') | safe}}
         
 
 
+        
+
+
+        
 </body>
 </html>
