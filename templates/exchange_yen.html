@@ -112,8 +112,8 @@
 
 
         <form action="/exchange" method="post" >
-            <input type="text"  name="currency"  min='0' value='JPY' required>
-            <input type="number" name="amount"  min='0' required>
+            <input type="text" id="currency" name="currency"  min='0' value='JPY' required>
+            <input type="number" id="amount" name="amount"  min='0' required>
             <button type="submit">계산하기</button>
         </form>
             {{ render_html | default('') | safe}}

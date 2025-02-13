@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>욕심쟁이 방법 - 배낭 문제</title>
+</head>
+<body>
+    <h2>욕심쟁이 방법을 이용한 배낭 문제</h2>
+    <form action="/knapsack" method="post">
+        <label for="max_capacity">배낭의 최대 용량 (M):</label>
+        <input type="number" id="max_capacity" name="max_capacity" value="10" required><br><br>
+
+        <!-- <label for="num_objects">물체의 개수 (n):</label>
+        <input type="number" id="num_objects" name="num_objects" value="4" required><br><br> -->
+
+        <label for="profit1">이익 (p1):</label>
+        <input type="number" id="profit1" name="profit1" value="16" required>
+        <label for="weight1">무게 (w1):</label>
+        <input type="number" id="weight1" name="weight1" value="4" required><br><br>
+
+        <label for="profit2">이익 (p2):</label>
+        <input type="number" id="profit2" name="profit2" value="4" required>
+        <label for="weight2">무게 (w2):</label>
+        <input type="number" id="weight2" name="weight2" value="2" required><br><br>
+
+        <label for="profit3">이익 (p3):</label>
+        <input type="number" id="profit3" name="profit3" value="12" required>
+        <label for="weight3">무게 (w3):</label>
+        <input type="number" id="weight3" name="weight3" value="4" required><br><br>
+
+        <label for="profit4">이익 (p4):</label>
+        <input type="number" id="profit4" name="profit4" value="15" required>
+        <label for="weight4">무게 (w4):</label>
+        <input type="number" id="weight4" name="weight4" value="3" required><br><br>
+
+        <input type="submit" value="최대 이익 계산">
+    </form>
+    {{ render_html | default('') | safe}}
+</body>
+</html>

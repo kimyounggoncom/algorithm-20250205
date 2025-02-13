@@ -37,10 +37,7 @@ class ExchangeService:
     def get_currency_dict(self, amount, currency_list):
         money = amount
         currency_dict ={}
-        for currency in currency_list:
-            currency_dict[currency] = money // currency
-            money %= currency 
-        return currency_dict
+        
     
     def print_currency_dict(self, currency_dict, currency_unit):
         print("----------거스름돈-----------" )
